@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "product": "pipmcp",
+  "credential": "PIPMCP_API_KEY",
+  "skills": [
+    {
+      "name": "pipmcp-amazon-aws-bedrock",
+      "description": "Connect AI agents to Amazon Bedrock using one PipMCP API key and actual hosted tool discovery."
+    }
+  ],
+  "files": {
+    "skills/pipmcp-amazon-aws-bedrock/SKILL.md": "202f3dc8bce85a85d395c8ca2626be0867de8812f9ef1990341db1b941c36dc6"
+  }
+}

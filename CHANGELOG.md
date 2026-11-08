@@ -1,5 +1,5 @@
 # Changelog
 
-## 0.1.0
+## 1.0.0
 
-Initial deterministic integration artifact. Capability evidence is recorded in integration.json.
+Authenticated private execution, actual schema discovery, durable receipts, task skills and one PipMCP API key. Historical local runtimes remain in Git history.

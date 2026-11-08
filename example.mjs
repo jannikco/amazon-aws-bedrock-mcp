@@ -1,12 +1,4 @@
-/** Offline setup inspection by default; --live lists tools, never calls them. */
-import {clientConfigs,checkConnection} from './lib/index.mjs';
-import {readFileSync} from 'node:fs';
-const manifest=JSON.parse(readFileSync(new URL('./integration.json',import.meta.url)));
-const tokenEnv="PIPMCP_TOKEN";
-const endpoint=process.env.PIPMCP_ENDPOINT || manifest.endpoint;
-if (process.argv.includes('--setup') || !endpoint) {
- console.log(JSON.stringify({app:manifest.appName||manifest.title,appSlug:manifest.appSlug,authentication:manifest.authentication||{},providerDocs:manifest.providerDocs,providerWebsite:manifest.providerWebsite,setupUrl:"https://pipmcp.com/register?app=amazon-aws-bedrock&utm_source=github&utm_campaign=github-amazon-aws-bedrock-mcp",requiredEnvironment:['PIPMCP_ENDPOINT',tokenEnv],note:'Connect provider credentials only in the hosted product. This utility never reads provider credential values.'},null,2));
- if (!endpoint || process.argv.includes('--setup')) process.exit(0);
-}
-if (process.argv.includes('--live')) console.log(JSON.stringify(await checkConnection({endpoint,token:process.env[tokenEnv]}),null,2));
-else console.log(JSON.stringify(clientConfigs(endpoint,{name:manifest.id,tokenEnv}),null,2));
+#!/usr/bin/env node
+import{discover}from'./doctor.mjs';
+if(!process.argv.includes('--live'))console.log(JSON.stringify({mode:'offline-plan',connectorId:"amazon-aws-bedrock",credential:'PIPMCP_API_KEY',api:'https://pipmcp.com/api/v1',authentication:'not-tested',providerExecution:'not-run',next:'Configure your hosted integration and run npm run doctor with an authorized key.'},null,2));
+else try{console.log(JSON.stringify(await discover(),null,2));}catch(error){console.error(JSON.stringify({ok:false,error:{code:error.code??'setup_required',message:error.message}}));process.exitCode=1;}

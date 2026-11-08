@@ -1,1 +1,1 @@
-Report vulnerabilities through https://pipmcp.com/contact. Ask for a private reporting channel before sharing sensitive details. Never include API keys, session tokens or personal records in public issues. Runtime credentials stay in your environment.
+Never share API keys or customer records in public issues. Report sensitive problems through https://pipmcp.com/contact. Runtime provider credentials remain in the hosted service.

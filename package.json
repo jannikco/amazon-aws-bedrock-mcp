@@ -1,15 +1,38 @@
 {
   "name": "amazon-aws-bedrock-mcp",
-  "version": "0.1.0",
-  "description": "Generate Amazon Bedrock MCP client configuration, inspect available tools and validate hosted endpoint access through PipMCP.",
+  "version": "1.0.0",
   "type": "module",
-  "private": false,
   "license": "MIT",
+  "description": "Prepare Amazon Bedrock for AI workflows with a PipMCP setup doctor, authenticated discovery and coding-agent instructions.",
   "engines": {
     "node": ">=22"
   },
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.mjs"
+    }
+  },
+  "bin": {
+    "amazon-aws-bedrock-mcp": "example.mjs"
+  },
   "scripts": {
-    "test": "node --test",
-    "start": "node example.mjs"
-  }
+    "start": "node example.mjs",
+    "doctor": "node doctor.mjs",
+    "server": "node server.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.4.0"
+  },
+  "files": [
+    "lib",
+    "server.mjs",
+    "doctor.mjs",
+    "example.mjs",
+    "README.md",
+    "LICENSE",
+    "capabilities.json",
+    "docs"
+  ]
 }
