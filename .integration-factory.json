@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "verification": "mock-only",
+  "releaseEligible": true,
+  "maintainer": "jannikco",
+  "license": "MIT",
+  "sourceRevision": "9c557eef3ef93d78aa7eb198fbb2eeb27a4e47cadcb596df93ee0a98d1bf0a8c",
+  "evidence": [
+    "Source-backed provider setup metadata",
+    "Offline configuration and MCP protocol tests"
+  ],
+  "provenance": [
+    "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_Operations_Amazon_Bedrock_Runtime.html"
+  ],
+  "id": "amazon-aws-bedrock-mcp",
+  "kind": "mcp-setup",
+  "product": "pipmcp",
+  "title": "Amazon Bedrock MCP setup and connection checker",
+  "description": "Generate Amazon Bedrock MCP client configuration, inspect available tools and validate hosted endpoint access through PipMCP.",
+  "operationIds": [],
+  "appSlug": "amazon-aws-bedrock",
+  "appName": "Amazon Bedrock",
+  "providerDocs": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_Operations_Amazon_Bedrock_Runtime.html",
+  "providerWebsite": "https://aws.amazon.com/bedrock/",
+  "authentication": {
+    "type": "bearer",
+    "requiredCredentialFields": [
+      "token"
+    ],
+    "requiredHeaderNames": [],
+    "helpUrl": "https://docs.aws.amazon.com/bedrock/latest/userguide/api-keys-generate.html",
+    "tenantRequired": true,
+    "accountParameterNames": []
+  },
+  "attributionSlug": "github-amazon-aws-bedrock-mcp",
+  "factory": "leadadapter-pipmcp",
+  "generatorVersion": 1
+}
